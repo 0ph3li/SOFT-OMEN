@@ -1,0 +1,129 @@
+/* =========================================================
+   SOFT OMEN — deck.css (the deck: 22 major arcana)
+   same language as the home: black, ascii that blooms,
+   fraunces soft for the pink lines, mono for the rest.
+   a hand of cards → a reading room → a fear index → draw one
+   concept, design & code by ghostly.grl ♥
+   ========================================================= */
+
+.ascii-pre { font-family: ui-monospace, Menlo, monospace; white-space: pre; }
+
+/* ================= loader: one card, cut and turned ================= */
+.dl { position: fixed; inset: 0; z-index: 250; background: var(--black); display: grid; place-items: center; align-content: center; gap: 26px; }
+.dl__card { font-family: ui-monospace, Menlo, monospace; white-space: pre; font-size: clamp(11px, 1.3vw, 17px); line-height: 1.12; color: var(--pink); text-shadow: 0 0 10px rgba(255, 46, 154, .55); }
+.dl__cap { color: var(--pink); text-align: center; }
+.dl__cap b { color: var(--hot); font-weight: 400; }
+
+/* ================= 00 the fan ================= */
+.fan { min-height: 100vh; min-height: 100svh; background: var(--black); }
+.fan__head { position: relative; z-index: 3; padding: 110px var(--gut) 0; }
+.fan__head .px { color: var(--pink); }
+.fan__head .px b { color: var(--hot); font-weight: 400; }
+.fan__title { margin-top: 6px; font-size: clamp(110px, 17vw, 300px); line-height: .78; text-shadow: 0 0 40px rgba(255, 46, 154, .35); }
+.fan__title span { display: inline-block; }
+.fan__title span + span { margin-left: .18em; }
+.fan__lede { margin-top: 22px; max-width: 46ch; font-size: 15px; color: var(--pink); }
+.fan__peek { position: absolute; z-index: 3; right: var(--gut); top: 120px; max-width: 34ch; text-align: right; color: var(--pink); line-height: 1.8; }
+.fan__peek b { display: block; font-family: var(--f-script); font-style: italic; font-weight: 400; font-variation-settings: 'SOFT' 100, 'opsz' 144; letter-spacing: -.02em; text-transform: none;
+  font-size: clamp(34px, 3.4vw, 56px); line-height: 1; color: var(--hot); margin-bottom: 6px; }
+/* the pivot sits far below the screen; every card hangs at radius --R above it */
+.fan__hand { position: absolute; z-index: 2; left: 50%; top: calc(100% - 110px + var(--R, 1400px)); width: 0; height: 0; }
+.fcard { position: absolute; left: 0; top: 0; width: 0; height: 0; will-change: transform; }
+.fcard pre { position: absolute; left: 0; bottom: var(--R, 1400px); font-family: ui-monospace, Menlo, monospace; white-space: pre; font-size: clamp(9px, 1.05vw, 15px); line-height: 1.1; color: rgba(244, 169, 207, .75); background: var(--black);
+  transform: translateX(-50%); transition: color .25s, text-shadow .25s, translate .45s var(--ease); cursor: pointer; }
+.fcard:hover pre, .fcard.is-hot pre { color: #fff; text-shadow: 0 0 14px var(--hot), 0 0 2px var(--hot); translate: 0 -46px; }
+.fan__hint { position: absolute; z-index: 3; left: 50%; transform: translateX(-50%); bottom: 30px; color: var(--pink); }
+
+/* ================= 01 the reading room ================= */
+.stage { background: var(--black); }
+.stage__pin { position: relative; height: 100vh; height: 100svh; overflow: hidden; overflow: clip; display: grid; grid-template-columns: 46fr 54fr; align-items: center; gap: clamp(20px, 4vw, 70px); padding: 90px var(--gut) 90px; }
+.stage__label { position: absolute; z-index: 4; left: var(--gut); top: 80px; color: var(--pink); }
+.stage__label b { color: var(--hot); font-weight: 400; }
+.stage__ghost { position: absolute; z-index: 1; right: -2vw; bottom: -6vh; font-family: var(--f-script); font-style: italic; font-weight: 300; font-variation-settings: 'SOFT' 100, 'opsz' 144; letter-spacing: -.04em;
+  font-size: clamp(200px, 34vw, 620px); line-height: .8; color: transparent; -webkit-text-stroke: 1px rgba(244, 169, 207, .22); pointer-events: none; white-space: nowrap; }
+
+.big { position: relative; z-index: 3; justify-self: center; perspective: 1400px; cursor: pointer; }
+.big__in { position: relative; transform-style: preserve-3d; will-change: transform; }
+.big__pre { font-family: ui-monospace, Menlo, monospace; white-space: pre; font-size: clamp(11px, 1.32vw, 20px); line-height: 1.1; color: var(--pink); background: var(--black);
+  text-shadow: 0 0 9px rgba(255, 46, 154, .5); padding: 2px; }
+.big__g { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-family: 'Times New Roman', serif; font-size: clamp(54px, 6.4vw, 110px); line-height: 1; color: var(--hot);
+  text-shadow: 0 0 26px rgba(255, 46, 154, .85); pointer-events: none; }
+.big:hover .big__pre { color: #fff; }
+
+.info { position: relative; z-index: 3; max-width: 640px; }
+.info__num { color: var(--hot); }
+.info__name { margin-top: 6px; font-size: clamp(64px, 7.4vw, 136px); line-height: .92; text-shadow: 0 0 34px rgba(255, 46, 154, .35); }
+.info__row { margin-top: 22px; padding-top: 10px; border-top: 1px solid rgba(244, 169, 207, .25); }
+.info__k { color: rgba(244, 169, 207, .7); }
+.info__they { position: relative; display: inline-block; margin-top: 4px; font-size: 15px; color: var(--grey); }
+.info__strike { position: absolute; left: -4px; right: -4px; top: 55%; height: 2px; background: var(--hot); box-shadow: 0 0 8px var(--hot); transform-origin: left; }
+.info__we { margin-top: 4px; font-family: var(--f-script); font-style: italic; font-weight: 400; font-variation-settings: 'SOFT' 100, 'opsz' 144; letter-spacing: -.015em; font-size: clamp(26px, 2.5vw, 40px); line-height: 1.1; color: #fff; }
+.info__meter { margin-top: 22px; font-family: ui-monospace, Menlo, monospace; white-space: pre; font-size: clamp(12px, 1vw, 15px); line-height: 1.6; color: var(--pink); }
+.info__meter b { color: var(--hot); font-weight: 400; text-shadow: 0 0 8px rgba(255, 46, 154, .6); }
+.info__meter i { font-style: normal; color: rgba(244, 169, 207, .45); }
+.info__rev { margin-top: 14px; }
+.stage.is-rev .info__num, .stage.is-rev .info__rev { color: #fff; }
+
+.rail { position: absolute; z-index: 4; left: var(--gut); right: var(--gut); bottom: 24px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(244, 169, 207, .2); padding-top: 10px; }
+.rail::before { content: ''; position: absolute; left: 0; top: -1px; height: 1px; width: 100%; background: var(--hot); box-shadow: 0 0 8px var(--hot); transform: scaleX(var(--p, 0)); transform-origin: left; }
+.rail button { font-family: var(--f-px); font-size: 10px; color: rgba(244, 169, 207, .45); padding: 4px 2px; transition: color .2s, transform .3s var(--ease); }
+.rail button:hover { color: var(--pink); }
+.rail button.is-on { color: var(--hot); text-shadow: 0 0 10px var(--hot); transform: translateY(-4px); }
+
+/* ================= 02 the fear index ================= */
+.fear { padding: 140px 0 110px; background: var(--black); }
+.fear .sec__head .script { font-size: clamp(76px, 11vw, 190px); }
+.fear__bar { position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: end; flex-wrap: wrap; gap: 16px 30px; max-width: 1240px; margin: 40px auto 0; padding: 0 var(--gut); }
+.fear__legend { font-size: 13px; color: var(--pink); }
+.fear__key { font-family: ui-monospace, Menlo, monospace; }
+.fear__key--s { color: rgba(244, 169, 207, .45); }
+.fear__key--i { color: var(--hot); text-shadow: 0 0 8px var(--hot); }
+.fear__sort { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.fear__sort button { color: rgba(244, 169, 207, .55); transition: color .2s; }
+.fear__sort button:hover { color: var(--pink); }
+.fear__sort button.is-on { color: var(--hot); text-shadow: 0 0 10px rgba(255, 46, 154, .7); }
+.fear__list { position: relative; z-index: 2; list-style: none; max-width: 1240px; margin: 18px auto 0; padding: 0 var(--gut); }
+.frow { display: grid; grid-template-columns: 54px minmax(180px, 300px) 1fr; gap: 18px; align-items: center; padding: 10px 6px; border-top: 1px solid rgba(244, 169, 207, .16); background: var(--black); transition: background .3s; }
+.frow:last-child { border-bottom: 1px solid rgba(244, 169, 207, .16); }
+.frow:hover { background: #12090e; }
+.frow__n { font-family: var(--f-px); font-size: 11px; color: var(--pink); }
+.frow__name { font-family: var(--f-script); font-style: italic; font-weight: 400; font-variation-settings: 'SOFT' 100, 'opsz' 144; letter-spacing: -.02em; font-size: clamp(26px, 2.3vw, 38px); line-height: 1; color: var(--hot);
+  transition: transform .35s var(--ease), color .2s; }
+.frow:hover .frow__name { transform: translateX(10px); color: #fff; }
+.frow__bars { font-family: ui-monospace, Menlo, monospace; white-space: pre; font-size: clamp(11px, .95vw, 14px); line-height: 1.35; overflow: hidden; }
+.frow__s { color: rgba(244, 169, 207, .45); }
+.frow__i { color: var(--hot); text-shadow: 0 0 8px rgba(255, 46, 154, .6); }
+.frow__said { color: rgba(244, 169, 207, .7); margin-left: 10px; }
+.fear__note { position: relative; z-index: 2; max-width: 1240px; margin: 20px auto 0; padding: 0 var(--gut); color: rgba(244, 169, 207, .6); }
+
+/* ================= 03 draw one ================= */
+.draw { min-height: 100vh; min-height: 100svh; padding: 130px var(--gut) 90px; background: var(--black); display: flex; flex-direction: column; align-items: center; text-align: center; }
+.draw__head { padding: 0; }
+.draw__head .script { font-size: clamp(80px, 12vw, 200px); }
+.draw__card { position: relative; z-index: 2; margin-top: 30px; cursor: pointer; }
+.draw__pre { font-family: ui-monospace, Menlo, monospace; white-space: pre; font-size: clamp(11px, 1.15vw, 17px); line-height: 1.1; color: var(--pink); background: var(--black); text-shadow: 0 0 9px rgba(255, 46, 154, .5); text-align: left; }
+.draw__g { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-family: 'Times New Roman', serif; font-size: clamp(48px, 5vw, 90px); line-height: 1; color: var(--hot); text-shadow: 0 0 26px rgba(255, 46, 154, .85); opacity: 0; pointer-events: none; }
+.draw__btn { margin-top: 26px; }
+.draw__out { position: relative; z-index: 2; margin-top: 18px; min-height: 160px; max-width: 640px; }
+.draw__num { color: var(--hot); }
+.draw__name { font-size: clamp(54px, 6vw, 100px); margin-top: 4px; }
+.draw__we { margin-top: 10px; font-size: 16px; color: #fff; }
+.draw__book { display: inline-block; margin-top: 12px; visibility: hidden; }
+.draw.is-drawn .draw__book { visibility: visible; }
+.draw__last { position: relative; z-index: 2; margin-top: 16px; color: rgba(244, 169, 207, .55); }
+
+/* ================= responsive ================= */
+@media (max-width: 900px) {
+  .fan__peek { display: none; }
+  .stage__pin { grid-template-columns: 1fr; align-content: center; gap: 18px; padding: 110px var(--gut) 70px; }
+  .big__pre { font-size: clamp(8px, 2.2vw, 12px); }
+  .info { text-align: left; }
+  .info__name { font-size: clamp(48px, 13vw, 80px); }
+  .info__row--they { display: none; }
+  .info__meter { display: none; }
+  .rail button { font-size: 0; width: 8px; height: 8px; padding: 0; border-radius: 50%; background: rgba(244, 169, 207, .3); }
+  .rail button.is-on { background: var(--hot); }
+  .frow { grid-template-columns: 34px 1fr; }
+  .frow__bars { grid-column: 1 / -1; }
+  .frow__said { display: none; }
+}

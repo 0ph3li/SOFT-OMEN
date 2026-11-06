@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" translate="no" class="notranslate">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="google" content="notranslate" />
+  <title>the pull — SOFT OMEN</title>
+  <meta name="description" content="Ask one question, pick a spread, turn the cards yourself. Your reader answers in her own voice." />
+  <meta name="theme-color" content="#050304" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <!-- concept, design & code by ghostly.grl ♥ -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=9" />
+  <link rel="stylesheet" href="css/pull.css?v=1" />
+</head>
+<body class="is-loading" data-page="pull">
+
+  <!-- ============ loader: a small card is cut and turns into the page ============ -->
+  <div class="pl" aria-hidden="true">
+    <pre class="pl__card"></pre>
+    <p class="pl__cap px">the pull <b class="pl__n">000</b>%</p>
+  </div>
+
+  <!-- ============ cursor ============ -->
+  <div class="cur" aria-hidden="true">
+    <svg class="cur__star" viewBox="0 0 40 40"><path d="M20 0 C21.5 13 27 18.5 40 20 C27 21.5 21.5 27 20 40 C18.5 27 13 21.5 0 20 C13 18.5 18.5 13 20 0Z" /></svg>
+    <span class="cur__label px"></span>
+  </div>
+
+  <!-- ============ header ============ -->
+  <header class="hdr px">
+    <a href="index.html" class="hdr__logo" data-cursor="home">soft omen ✦</a>
+    <nav class="hdr__nav">
+      <a href="pull.html" class="is-on" data-scramble>the pull</a>
+      <a href="readers.html" data-scramble>readers</a>
+      <a href="deck.html" data-scramble>the deck</a>
+      <a href="readings.html" data-scramble>readings</a>
+      <a href="book.html" data-scramble>book</a>
+    </nav>
+    <p class="hdr__moon" data-moon>moon ☾ --%</p>
+  </header>
+
+  <main>
+
+    <!-- ============ 00 ask: your question becomes the giant line ============ -->
+    <section class="ph ask" id="top">
+      <canvas class="sec__ascii" aria-hidden="true"></canvas>
+      <p class="px">the pull ✦ read by <b data-reader-name>NOX</b> ✦ one question, out loud</p>
+      <h1 class="ph__title script ask__echo" data-echo>ask it.</h1>
+      <form class="ask__form" autocomplete="off">
+        <label class="px" for="q">&gt; your question</label>
+        <input id="q" name="q" maxlength="80" placeholder="will he text back_" />
+        <button class="btn btn--big px" type="submit" data-cursor="shuffle">[ shuffle → ]</button>
+      </form>
+      <p class="ask__hint px">examples: <button type="button" data-ex>should i move</button> · <button type="button" data-ex>is it him</button> · <button type="button" data-ex>do i quit</button></p>
+    </section>
+
+    <!-- ============ 01 the table: pick a spread, turn the cards yourself ============ -->
+    <section class="table" id="table">
+      <canvas class="sec__ascii" aria-hidden="true"></canvas>
+      <div class="sec__head">
+        <p class="px">01 ✦ the table ✦ <b>turn them yourself</b></p>
+        <h2 class="script">lay them out</h2>
+      </div>
+      <div class="table__spreads px" role="group" aria-label="choose a spread">
+        <button type="button" class="is-on" data-spread="1" data-cursor="one card">[ one card ]</button>
+        <button type="button" data-spread="3" data-cursor="three">[ gone · here · coming ]</button>
+        <button type="button" data-spread="5" data-cursor="the cross">[ the cross ]</button>
+      </div>
+      <div class="table__grid">
+        <div class="felt" data-felt></div>
+        <aside class="chat" aria-live="polite">
+          <p class="chat__head px"><span data-reader-name>NOX</span> is reading <i class="chat__dot">●</i></p>
+          <div class="chat__log" data-log></div>
+        </aside>
+      </div>
+      <p class="table__hint px" data-hint>click a card to turn it ✦</p>
+    </section>
+
+    <div class="riffle" aria-hidden="true"><div class="riffle__row"></div><div class="riffle__row"></div></div>
+
+    <!-- ============ 02 the receipt ============ -->
+    <section class="sec receipt" id="receipt">
+      <canvas class="sec__ascii" aria-hidden="true"></canvas>
+      <div class="sec__head">
+        <p class="px">02 ✦ the receipt ✦ <b>keep it, or don't</b></p>
+        <h2 class="script">in writing</h2>
+      </div>
+      <div class="receipt__row">
+        <pre class="receipt__paper" data-paper>turn all the cards first.</pre>
+        <div class="receipt__side">
+          <p class="receipt__note">every pull prints a receipt. it stays on this device, nowhere else. if you want it read properly, out loud, with tea: book a night.</p>
+          <button class="btn px" type="button" data-copy data-cursor="copy">[ copy the receipt ]</button>
+          <a class="btn px" href="book.html" data-cursor="book">[ read it properly → book ]</a>
+          <button class="btn px" type="button" data-again data-cursor="again">[ pull again ↑ ]</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 03 your last pulls ============ -->
+    <section class="sec past" id="past">
+      <div class="sec__head">
+        <p class="px">03 ✦ the drawer ✦ <b>your last six pulls</b></p>
+        <h2 class="script">you asked</h2>
+      </div>
+      <ol class="past__list" data-past></ol>
+      <button class="btn px past__clear" type="button" data-clear data-cursor="forget">[ forget them all ]</button>
+    </section>
+
+    <!-- ============ footer: ascii roses ============ -->
+    <footer class="ft" id="ft">
+      <canvas class="ft__ascii" aria-hidden="true"></canvas>
+      <p class="ft__script">see you in<br />your dreams</p>
+      <div class="ft__cols px">
+        <p>soft omen<br />via dei cappellari 7<br />milano</p>
+        <p>every night<br />23:00 — 03:33<br />closed on full moons*</p>
+        <p>*we're busy<br /><a href="book.html" data-cursor="book">book a night →</a><br /><a href="#top" data-cursor="up">back to the top ↑</a></p>
+      </div>
+      <pre class="ft__sig" aria-label="ghostly.grl">                ░▓▓▓░                                          ░░    ░▓▓▓▓                                               ░▓▓▓▓
+                █████                                       ▓███▓    ▓████                                               ▓████
+   ░▓▓▓░ ▓▓▓▓░  █████░▓▓▓▓░       ░▓▓▓▓▓░       ░▓▓▓▓▓▓░  ░▓█████▓▓  ▓████ ▓▓▓▓▓    ▓▓▓▓░         ░▓▓▓░ ▓▓▓▓░  ░▓▓▓░░▓▓▓ ▓████
+ ░███████████▓  ████████████    ▓█████████▓   ▓███▓▓▓███▓ ▓████████  ▓████ ░████░  ░████        ░███████████▓  ████████▓ ▓████
+ ████▓░░▓████▓  █████░ ░████░  █████░ ░████▓  ████▓▓▓▓░░    ████▓    ▓████  ▓████  ████░        ████▓░░▓████▓  ▓████▓ ░  ▓████
+░████░   ████▓  █████   ████▓ ░████░   ▓████  ░▓█████████░  ████▓    ▓████   ▓███▓▓███▓        ░████░   ████▓  ▓████     ▓████
+ ████▓░░▓████▓  █████   ████▓  ████▓░ ░████▓     ░░░▓████▓  █████ ░  ▓████    ████████   ▓████  ████▓░░▓████▓  ▓████     ▓████
+ ░███████████▓  █████   ████▓   ▓█████████▓   █████▓▓████░  ▓██████  ▓████     ██████    █████  ░███████████▓  █████     ▓████
+   ░▓▓▓▓▓████░  ░▓▓▓░   ▓▓▓▓░     ░▓▓▓▓▓░      ░▓▓▓▓▓▓░░     ░▓▓▓▓▓  ░▓▓▓▓     ▓████░    ░▓▓▓▓    ░▓▓▓▓▓████░  ░▓▓▓▓     ░▓▓▓▓
+ ▓██████████▓                                                              ░███████▓            ▓██████████▓
+  ░▓▓▓▓▓▓▓░                                                                 ▓▓▓▓▓░               ░▓▓▓▓▓▓▓░</pre>
+      <div class="ft__bottom px">
+        <span>© 2026 SOFT OMEN — a concept. no futures were harmed.</span>
+        <span data-clock>milano 00:00</span>
+        <span class="ft-sign">concept, design &amp; code by <span class="sig">ghostly.grl</span> ♥</span>
+      </div>
+    </footer>
+  </main>
+
+  <div class="toast px" aria-live="polite"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/main.js?v=16"></script>
+  <script src="js/pull.js?v=1"></script>
+</body>
+<!--
+   *    /\_/\      ✦
+       ( o.o )   <3  ghostly.grl
+   ✦    > ^ <   ☾     *
+       bad news, delivered softly.
+-->
+</html>

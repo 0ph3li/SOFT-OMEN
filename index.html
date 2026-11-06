@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" translate="no" class="notranslate">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="google" content="notranslate" />
+  <title>SOFT OMEN — bad news, delivered softly</title>
+  <meta name="description" content="SOFT OMEN is a tarot house in Milano, open every night after 23:00. The cards never lie. We just say it nicer." />
+  <meta name="theme-color" content="#050304" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <!-- concept, design & code by ghostly.grl ♥ -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=9" />
+  <link rel="stylesheet" href="css/index.css?v=10" />
+</head>
+<body class="is-loading" data-page="home">
+
+  <!-- ============ loader: one rose blooms, the name types in ============ -->
+  <div class="ld" aria-hidden="true">
+    <canvas class="ld__ascii"></canvas>
+    <pre class="ld__mark">                                    ▓██████▓   ░▓▓█
+                                   ▓█████▓▓░ ░█████
+   ░░▓▓▓▓▓▓░         ░▓▓▓▓▓░░    ▓▓██████▓░░▓██████▓▓░               ░▓▓▓▓▓░░     ░▓▓▓▓░ ░▓▓▓▓░   ░▓▓▓▓░        ░▓▓▓▓▓▓░     ░▓▓▓▓░ ░▓▓▓▓░
+ ░███████████▓    ░███████████▓  ██████████░██████████            ░███████████▓   ▓████▓████████▓███████▓    ░███████████▓   ▓████▓████████░
+ █████░░░▓▓▓▓▓░  ▓█████░ ░▓█████ ▓▓█████▓▓▓░▓██████▓▓░           ▓█████░ ░▓█████  ▓██████▓▓███████▓▓█████░  ▓█████░░░▓█████  ▓██████▓▓██████
+ ░█████████▓▓░   █████░    █████░  █████░    ▓█████              █████░    █████░ ▓█████   ▓█████   █████▓  ███████████████▓ ▓█████   ▓█████
+   ░▓▓▓███████▓  █████░    █████░  █████░    ▓█████              █████░    █████░ ▓█████   ▓████▓   █████▓  █████▓▓▓▓▓▓▓▓▓▓░ ▓█████   ▓█████
+ ▓▓███▓░ ░█████  ▓█████░ ░▓█████   █████░    ░█████              ▓█████░ ░▓█████  ▓█████   ▓████▓   █████▓  ▓█████░  ░▓▓▓▓▓  ▓█████   ▓█████
+ ▓████████████░   ░███████████▓    █████░     ███████▓            ░███████████▓   ▓█████   ▓████▓   █████▓   ░███████████▓░  ▓█████   ▓█████
+   ░▓▓▓▓▓▓▓░         ░▓▓▓▓▓░░      ▓▓▓▓▓░      ░▓▓▓▓▓░               ░▓▓▓▓▓░░     ░▓▓▓▓▓   ░▓▓▓▓░   ░▓▓▓▓░     ░░▓▓▓▓▓▓░     ░▓▓▓▓▓   ░▓▓▓▓▓</pre>
+    <p class="ld__cap px">shuffling the deck <b class="ld__pct">000</b>%</p>
+    <p class="ld__script">shh…</p>
+  </div>
+
+  <!-- ============ cursor ============ -->
+  <div class="cur" aria-hidden="true">
+    <svg class="cur__star" viewBox="0 0 40 40"><path d="M20 0 C21.5 13 27 18.5 40 20 C27 21.5 21.5 27 20 40 C18.5 27 13 21.5 0 20 C13 18.5 18.5 13 20 0Z" /></svg>
+    <span class="cur__label px"></span>
+  </div>
+
+  <!-- ============ header ============ -->
+  <header class="hdr px">
+    <a href="index.html" class="hdr__logo" data-cursor="home">soft omen ✦</a>
+    <nav class="hdr__nav">
+      <a href="pull.html" data-scramble>the pull</a>
+      <a href="readers.html" data-scramble>readers</a>
+      <a href="deck.html" data-scramble>the deck</a>
+      <a href="readings.html" data-scramble>readings</a>
+      <a href="book.html" data-scramble>book</a>
+    </nav>
+    <p class="hdr__moon" data-moon>moon ☾ --%</p>
+  </header>
+
+  <main>
+
+    <!-- ============ 00 hero ============ -->
+    <section class="hero" id="top">
+      <canvas class="hero__ascii" aria-hidden="true"></canvas>
+      <!-- the hero picture is a tarot card: XVIII the moon, drawn in ascii. her hero.jpg replaces the art inside it -->
+      <div class="mc" data-cursor="tilt me">
+        <div class="mc__in">
+          <div class="mc__face">
+            <span class="mc__num px">XVIII</span>
+            <span class="mc__name">the moon</span>
+            <span class="slot-tag px">img/HOME/hero.jpg</span>
+          </div>
+          <pre class="mc__back" aria-hidden="true"></pre>
+        </div>
+        <p class="mc__cap px">tonight's card ✦ <span data-daily></span></p>
+      </div>
+      <pre class="hero__mark" aria-label="soft omen">                                    ▓██████▓   ░▓▓█
+                                   ▓█████▓▓░ ░█████
+   ░░▓▓▓▓▓▓░         ░▓▓▓▓▓░░    ▓▓██████▓░░▓██████▓▓░               ░▓▓▓▓▓░░     ░▓▓▓▓░ ░▓▓▓▓░   ░▓▓▓▓░        ░▓▓▓▓▓▓░     ░▓▓▓▓░ ░▓▓▓▓░
+ ░███████████▓    ░███████████▓  ██████████░██████████            ░███████████▓   ▓████▓████████▓███████▓    ░███████████▓   ▓████▓████████░
+ █████░░░▓▓▓▓▓░  ▓█████░ ░▓█████ ▓▓█████▓▓▓░▓██████▓▓░           ▓█████░ ░▓█████  ▓██████▓▓███████▓▓█████░  ▓█████░░░▓█████  ▓██████▓▓██████
+ ░█████████▓▓░   █████░    █████░  █████░    ▓█████              █████░    █████░ ▓█████   ▓█████   █████▓  ███████████████▓ ▓█████   ▓█████
+   ░▓▓▓███████▓  █████░    █████░  █████░    ▓█████              █████░    █████░ ▓█████   ▓████▓   █████▓  █████▓▓▓▓▓▓▓▓▓▓░ ▓█████   ▓█████
+ ▓▓███▓░ ░█████  ▓█████░ ░▓█████   █████░    ░█████              ▓█████░ ░▓█████  ▓█████   ▓████▓   █████▓  ▓█████░  ░▓▓▓▓▓  ▓█████   ▓█████
+ ▓████████████░   ░███████████▓    █████░     ███████▓            ░███████████▓   ▓█████   ▓████▓   █████▓   ░███████████▓░  ▓█████   ▓█████
+   ░▓▓▓▓▓▓▓░         ░▓▓▓▓▓░░      ▓▓▓▓▓░      ░▓▓▓▓▓░               ░▓▓▓▓▓░░     ░▓▓▓▓▓   ░▓▓▓▓░   ░▓▓▓▓░     ░░▓▓▓▓▓▓░     ░▓▓▓▓▓   ░▓▓▓▓▓</pre>
+      <h1 class="hero__script"><span>bad news,</span><span>delivered</span><span>softly.</span></h1>
+      <div class="hero__cols px">
+        <p>a tarot house<br />in milano<br />est. 2026</p>
+        <p>every night<br />23:00 — 03:33<br /><span data-open></span></p>
+        <p>the cards never lie<br />we just say it nicer<br /><a href="#pull" data-cursor="pull">pull a card ↓</a></p>
+      </div>
+    </section>
+
+    <!-- ascii marquee: block letters sliding, faster when you scroll -->
+    <div class="marq" aria-hidden="true"><pre class="marq__track">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+      ░▓▓█     ▓█████                                                                                            ▓█████                                                                                                                   ░█████   ░█████                                           ██▓                                                                           ░█████                                       ░▓▓█                                                                        ░█████      ░▓▓█                               ░█████                                                                        ██▓                         
+    ░█████     ▓█████                                                                                            ▓█████                                                                                                                   ░█████    ▓▓▓▓▓                                       ░█▓▓██▓▓█▓                                                                         ▓▓▓▓▓                                     ░█████                                                                         ▓▓▓▓▓    ░█████                                ▓▓▓▓▓                                                                    ░█▓▓██▓▓█▓                      
+  ░▓██████▓▓░  ▓█████ ░▓▓▓▓░        ░▓▓▓▓▓▓░                 ░░▓▓▓▓▓▓░░       ░▓▓▓▓▓▓▓░░    ░▓▓▓▓░░▓▓▓▓    ░▓▓▓▓░▓█████    ░░▓▓▓▓▓▓░              ░▓▓▓▓░ ░▓▓▓▓░        ░▓▓▓▓▓▓░    ▓▓▓▓▓░    ░▓▓▓▓▓     ░▓▓▓▓▓▓░     ░▓▓▓▓░░▓▓▓▓          ░█████    ▓▓▓▓▓       ░▓▓▓▓▓▓░                        ░▓██████▓▓                    ▓▓▓▓▓     ▓▓▓▓▓    ░▓▓▓▓░     ░▓▓▓▓▓▓░               ▓▓▓▓▓   ░▓▓▓▓░   ░▓▓▓▓▓    ░░▓▓▓▓▓▓░    ░▓██████▓▓░             ░░▓▓▓▓▓▓░        ░▓▓▓▓▓▓▓░░   ▓▓▓▓▓░    ░▓▓▓▓▓           ▓▓▓▓▓  ░▓██████▓▓░           ░▓▓▓▓░ ░▓▓▓▓░     ▓▓▓▓▓      ░░▓▓▓▓▓▓░░        ░▓▓▓▓▓▓░     ░▓▓▓▓░░▓▓▓▓                    ░▓██████▓▓                      
+  ░██████████  ▓█████████████░   ░███████████▓             ░████████████░   █████████████   ▓█████████▓  ▓█████████████  ░███████████▓            ▓████▓████████░   ░███████████▓  ░█████    █████░  ░███████████▓   ▓█████████▓          ░█████   ░█████    ░███████████▓                       ░▓█████░                     ░████▓   ██████▓   █████   ░███████████▓            ░█████   ▓█████   ▓█████  ░███████████▓  ░██████████           ░███████████▓    █████████████  ░█████░   █████░          ░█████  ░██████████           ▓████▓████████░  ░█████    ░████████████░   ░███████████▓   ▓█████████▓                     ░▓█████░                       
+  ░▓██████▓▓░  ▓██████▓▓██████  ▓█████░░░▓█████           ▓█████░  ░████▓  ░▓███▓░ ░▓████▓  ▓██████▓▓▓  ▓█████░ ░██████  █████░░░▓▓▓▓▓░           ▓██████▓▓██████  ▓█████░░░▓█████  ▓████▓  ▓████░  ▓█████░░░▓█████  ▓██████▓▓▓           ░█████   ░█████   ▓█████░░░▓█████                      ░▓█░ ██░                      ▓████░ ▓███████░ ▓████░  ▓█████░░░▓█████           ░█████   ▓█████   ▓█████  █████░░░▓▓▓▓▓░ ░▓██████▓▓░           █████░░░▓▓▓▓▓░  ░▓███▓░ ░▓████▓  ░█████  ░████▓           ░█████  ░▓██████▓▓░           ▓██████▓▓██████  ░█████   ▓█████░  ░████▓  ▓█████░░░▓█████  ▓██████▓▓▓                      ░▓█░ ██░                       
+    ▓█████     ▓█████   ▓█████  ███████████████▓          █████░             ░░▓▓▓▓███████  ▓█████░     █████░   ▓█████  ░█████████▓▓░            ▓█████   ▓█████  ███████████████▓  ▓████░░████▓   ███████████████▓ ▓█████░              ░█████   ░█████   ███████████████▓                                                    █████░█████████░████▓   ███████████████▓          ░█████   ▓█████   ▓█████  ░█████████▓▓░    ▓█████              ░█████████▓▓░     ░░▓▓▓▓███████   ▓████░ █████            ░█████    ▓█████              ▓█████   ▓█████  ░█████   █████░           ███████████████▓ ▓█████░                                                        
+    ▓█████     ▓█████   ▓█████  █████▓▓▓▓▓▓▓▓▓▓░          █████░    ░▓░░░  ░███████▓▓█████  ▓█████      █████░   ▓█████    ░▓▓▓███████▓           ▓█████   ▓█████  █████▓▓▓▓▓▓▓▓▓▓░   █████████▓    █████▓▓▓▓▓▓▓▓▓▓░ ▓█████               ░█████   ░█████   █████▓▓▓▓▓▓▓▓▓▓░                                                    ░████████▓ █████████    █████▓▓▓▓▓▓▓▓▓▓░          ░█████   ▓█████   ▓█████    ░▓▓▓███████▓   ▓█████                ░▓▓▓███████▓  ░███████▓▓█████    █████▓████░            ░█████    ▓█████              ▓█████   ▓█████  ░█████   █████░    ░▓░░░  █████▓▓▓▓▓▓▓▓▓▓░ ▓█████                                                         
+    ░█████     ▓█████   ▓█████  ▓█████░  ░▓▓▓▓▓           ▓█████░ ░▓█████░ █████▓░░░██████  ▓█████      ▓█████░ ░██████  ▓▓███▓░ ░█████           ▓█████   ▓█████  ▓█████░  ░▓▓▓▓▓     ████████     ▓█████░  ░▓▓▓▓▓  ▓█████               ░█████   ░█████   ▓█████░  ░▓▓▓▓▓                                                      ▓███████  ░███████     ▓█████░  ░▓▓▓▓▓           ░█████   ▓█████▓▓▓██████  ▓▓███▓░ ░█████   ░█████              ▓▓███▓░ ░█████  █████▓░░░██████     ████████▓             ░█████    ░█████              ▓█████   ▓█████  ░█████   ▓█████░ ░▓█████░ ▓█████░  ░▓▓▓▓▓  ▓█████                                                         
+     ███████▓  ▓█████   ▓█████   ░███████████▓░            ░███████████▓░  ▓██████████████  ▓█████       ▓█████████████  ▓████████████░           ▓█████   ▓█████   ░███████████▓░     ░██████░      ░███████████▓░  ▓█████               ░█████   ░█████    ░███████████▓░                                                       ▓█████░   ▓█████░      ░███████████▓░           ░█████    ▓███████▓█████  ▓████████████░    ███████▓           ▓████████████░  ▓██████████████     ░███████              ░█████     ███████▓           ▓█████   ▓█████  ░█████    ░███████████▓░   ░███████████▓░  ▓█████                                                         
+      ░▓▓▓▓▓░  ░▓▓▓▓▓   ░▓▓▓▓▓     ░░▓▓▓▓▓▓░                 ░░▓▓▓▓▓▓░      ░░▓▓▓▓░░ ░▓▓▓▓  ░▓▓▓▓▓         ░▓▓▓▓░ ▓▓▓▓▓    ░▓▓▓▓▓▓▓░              ░▓▓▓▓▓   ░▓▓▓▓▓     ░░▓▓▓▓▓▓░         ░▓▓▓▓░         ░░▓▓▓▓▓▓░     ░▓▓▓▓▓               ░▓▓▓▓▓   ░▓▓▓▓▓      ░░▓▓▓▓▓▓░                                                           ▓▓▓▓▓     ▓▓▓▓▓         ░░▓▓▓▓▓▓░              ▓█████     ░▓▓▓▓░  ▓▓▓▓▓    ░▓▓▓▓▓▓▓░        ░▓▓▓▓▓░             ░▓▓▓▓▓▓▓░      ░░▓▓▓▓░░ ░▓▓▓▓      ▓█████               ░▓▓▓▓▓      ░▓▓▓▓▓░           ░▓▓▓▓▓   ░▓▓▓▓▓  ░▓▓▓▓▓      ░░▓▓▓▓▓▓░        ░░▓▓▓▓▓▓░     ░▓▓▓▓▓                                                         
+                                                                                                                                                                                                                                                                                                                                                                                ████████                                                                                          ▓▓▓▓█████░                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                                                ██████▓                                                                                           ███████▓░                                                                                                                                                                         
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </pre></div>
+
+    <!-- ============ 01 the pull ============ -->
+    <section class="pull" id="pull">
+      <div class="pull__stage">
+        <canvas class="sec__ascii" aria-hidden="true"></canvas>
+        <div class="pull__head">
+          <p class="px">01 ✦ the pull ✦ read by <b data-reader-name>NOX</b> ✦ keep scrolling, they turn</p>
+          <h2 class="script">me locking in</h2>
+        </div>
+        <div class="spread" aria-live="polite"></div>
+        <div class="pull__reads"></div>
+        <p class="pull__bar px"><span class="pull__fill"></span><b class="pull__pct">000</b></p>
+        <button class="btn px pull__again" data-again data-cursor="again">[ shuffle again ]</button>
+        <p class="pull__777 script">777</p>
+      </div>
+    </section>
+
+    <!-- ============ 02 readers ============ -->
+    <section class="readers" id="readers">
+      <div class="rd-pin">
+        <p class="rd-label px">02 ✦ four readers ✦ pick one, she stays with you ✦ <span class="rd-count">01 / 04</span></p>
+        <div class="rd-dots" aria-hidden="true"><span>▯</span><span>▯</span><span>▯</span><span>▯</span></div>
+        <div class="rd-track"></div>
+      </div>
+    </section>
+
+    <div class="riffle" aria-hidden="true"><div class="riffle__row"></div><div class="riffle__row"></div></div>
+
+    <!-- ============ the deck: all 22 major arcana on a wheel ============ -->
+    <section class="wheel" id="deck">
+      <div class="wheel__pin">
+        <canvas class="sec__ascii" aria-hidden="true"></canvas>
+        <div class="wheel__head">
+          <p class="px">03 ✦ the major arcana ✦ scroll to turn the wheel</p>
+          <h2 class="script">twenty-two ways<br />to be told</h2>
+        </div>
+        <div class="wheel__ring"></div>
+        <div class="wheel__center">
+          <p class="px wheel__num" data-w-num>0</p>
+          <p class="wheel__name script" data-w-name>the fool</p>
+          <p class="wheel__mean" data-w-mean></p>
+          <form class="birth" autocomplete="off">
+            <label class="px" for="bday">&gt; your birth card</label>
+            <input id="bday" name="bday" inputmode="numeric" maxlength="10" placeholder="dd/mm/yyyy_" />
+            <button class="btn px" type="submit" data-cursor="find it">[ find it ]</button>
+          </form>
+          <a class="btn px wheel__more" href="deck.html" data-w-more data-cursor="the deck">[ read this card properly → ]</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 03 readings ============ -->
+    <section class="menu menu--pink" id="menu">
+      <canvas class="sec__ascii" aria-hidden="true"></canvas>
+      <div class="sec__head">
+        <p class="px">04 ✦ the readings ✦ cash or vibes</p>
+        <h2 class="script">tonight is<br />a reading</h2>
+      </div>
+      <ol class="tracks"></ol>
+    </section>
+
+    <div class="riffle" aria-hidden="true"><div class="riffle__row"></div><div class="riffle__row"></div></div>
+
+    <!-- ============ 04 book ============ -->
+    <section class="book" id="book">
+      <canvas class="sec__ascii" aria-hidden="true"></canvas>
+      <div class="sec__head">
+        <p class="px">05 ✦ book ✦ your ticket prints while you type ✦ nothing is sent anywhere</p>
+        <h2 class="script">sleep on it</h2>
+      </div>
+      <div class="book__grid">
+      <pre class="ticket" aria-live="polite"></pre>
+      <form class="term" autocomplete="off" novalidate>
+        <p class="term__line"><span class="term__k">&gt; your name</span><input name="name" maxlength="24" placeholder="or a fake one_" /></p>
+        <p class="term__line"><span class="term__k">&gt; the question</span><input name="q" maxlength="90" placeholder="one question. we'll know the real one_" /></p>
+        <div class="term__line"><span class="term__k">&gt; how much truth</span>
+          <div class="term__opts" role="radiogroup" aria-label="how much truth">
+            <label><input type="radio" name="size" value="XS" checked /><span>XS</span></label>
+            <label><input type="radio" name="size" value="S" /><span>S</span></label>
+            <label><input type="radio" name="size" value="M" /><span>M</span></label>
+            <label><input type="radio" name="size" value="L" /><span>L</span></label>
+            <label><input type="radio" name="size" value="XL" /><span>XL</span></label>
+          </div>
+        </div>
+        <p class="term__note px" data-size-note>xs: we say it like a horoscope.</p>
+        <div class="term__line"><span class="term__k">&gt; the night</span><div class="term__opts" data-nights></div></div>
+        <p class="term__line"><span class="term__k">&gt; reading</span><span class="term__val" data-reading>the 3am</span></p>
+        <p class="term__line"><span class="term__k">&gt; reader</span><span class="term__val" data-reader-name>NOX</span></p>
+        <button class="btn btn--big px" type="submit" data-cursor="book">[ book the omen ]</button>
+      </form>
+      </div>
+    </section>
+
+    <!-- ============ footer: ascii roses (her favourite, untouched) ============ -->
+    <footer class="ft" id="ft">
+      <canvas class="ft__ascii" aria-hidden="true"></canvas>
+      <p class="ft__script">see you in<br />your dreams</p>
+      <div class="ft__cols px">
+        <p>soft omen<br />via dei cappellari 7<br />milano</p>
+        <p>every night<br />23:00 — 03:33<br />closed on full moons*</p>
+        <p>*we're busy<br /><a href="#top" data-cursor="up">back to the top ↑</a></p>
+      </div>
+      <pre class="ft__sig" aria-label="ghostly.grl">                ░▓▓▓░                                          ░░    ░▓▓▓▓                                               ░▓▓▓▓
+                █████                                       ▓███▓    ▓████                                               ▓████
+   ░▓▓▓░ ▓▓▓▓░  █████░▓▓▓▓░       ░▓▓▓▓▓░       ░▓▓▓▓▓▓░  ░▓█████▓▓  ▓████ ▓▓▓▓▓    ▓▓▓▓░         ░▓▓▓░ ▓▓▓▓░  ░▓▓▓░░▓▓▓ ▓████
+ ░███████████▓  ████████████    ▓█████████▓   ▓███▓▓▓███▓ ▓████████  ▓████ ░████░  ░████        ░███████████▓  ████████▓ ▓████
+ ████▓░░▓████▓  █████░ ░████░  █████░ ░████▓  ████▓▓▓▓░░    ████▓    ▓████  ▓████  ████░        ████▓░░▓████▓  ▓████▓ ░  ▓████
+░████░   ████▓  █████   ████▓ ░████░   ▓████  ░▓█████████░  ████▓    ▓████   ▓███▓▓███▓        ░████░   ████▓  ▓████     ▓████
+ ████▓░░▓████▓  █████   ████▓  ████▓░ ░████▓     ░░░▓████▓  █████ ░  ▓████    ████████   ▓████  ████▓░░▓████▓  ▓████     ▓████
+ ░███████████▓  █████   ████▓   ▓█████████▓   █████▓▓████░  ▓██████  ▓████     ██████    █████  ░███████████▓  █████     ▓████
+   ░▓▓▓▓▓████░  ░▓▓▓░   ▓▓▓▓░     ░▓▓▓▓▓░      ░▓▓▓▓▓▓░░     ░▓▓▓▓▓  ░▓▓▓▓     ▓████░    ░▓▓▓▓    ░▓▓▓▓▓████░  ░▓▓▓▓     ░▓▓▓▓
+ ▓██████████▓                                                              ░███████▓            ▓██████████▓
+  ░▓▓▓▓▓▓▓░                                                                 ▓▓▓▓▓░               ░▓▓▓▓▓▓▓░</pre>
+      <div class="ft__bottom px">
+        <span>© 2026 SOFT OMEN — a concept. no futures were harmed.</span>
+        <span data-clock>milano 00:00</span>
+        <span class="ft-sign">concept, design &amp; code by <span class="sig">ghostly.grl</span> ♥</span>
+      </div>
+    </footer>
+  </main>
+
+  <div class="toast px" aria-live="polite"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/main.js?v=16"></script>
+  <script src="js/index.js?v=15"></script>
+</body>
+<!--
+   *    /\_/\      ✦
+       ( o.o )   <3  ghostly.grl
+   ✦    > ^ <   ☾     *
+       bad news, delivered softly.
+-->
+</html>

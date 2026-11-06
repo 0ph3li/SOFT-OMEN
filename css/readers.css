@@ -1,0 +1,84 @@
+/* =========================================================
+   SOFT OMEN — readers.css (readers)
+   the line-up → one chapter each → the quiz
+   concept, design & code by ghostly.grl ♥
+   ========================================================= */
+
+/* ================= 00 the line-up: four tall photo cards ================= */
+.lineup { padding-bottom: 40px; }
+.lineup__title { font-size: clamp(80px, 11vw, 200px); }
+.lineup__row { position: relative; z-index: 2; flex: 1; display: flex; gap: clamp(10px, 1.4vw, 22px); margin-top: 34px; min-height: 52vh; }
+.lu { position: relative; flex: 1; display: flex; flex-direction: column; min-width: 0; transition: flex .8s var(--ease); }
+.lu.is-open { flex: 2.3; }
+.lineup__row:hover .lu:not(.is-open) .lu__frame, .lineup__row:hover .lu:not(.is-open) .lu__name { opacity: .45; }
+.lu__frame { position: relative; flex: 1; transition: opacity .5s, box-shadow .4s, border-color .4s; border: 1px solid var(--pink); padding: 8px; box-shadow: inset 0 0 0 6px var(--black), inset 0 0 0 7px rgba(244, 169, 207, .45); }
+.lu.is-open .lu__frame, .lu.is-picked .lu__frame { border-color: var(--hot); box-shadow: inset 0 0 0 6px var(--black), inset 0 0 0 7px var(--hot), 0 0 50px rgba(255, 46, 154, .35); }
+.lu__pic { position: absolute; inset: 14px; overflow: hidden; }
+.lu__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+.lu__pic .slot-tag { left: 8px; bottom: 8px; }
+.lu__num { position: absolute; top: 20px; left: 22px; z-index: 2; color: var(--pink); }
+.lu__name { transition: opacity .5s; margin-top: 10px; font-size: clamp(40px, 4.6vw, 84px); white-space: nowrap; }
+.lu__q { color: rgba(244, 169, 207, .7); margin-top: 4px; }
+.lu.is-picked .lu__q::after { content: ' ✦ yours'; color: var(--hot); }
+
+/* ================= 01-04 chapters ================= */
+.chap { display: grid; grid-template-columns: minmax(300px, 42%) 1fr; gap: clamp(30px, 6vw, 110px); padding: 120px var(--gut); background: var(--black); overflow: clip; border-top: 1px solid rgba(244, 169, 207, .2); }
+.chap--flip { grid-template-columns: 1fr minmax(300px, 42%); }
+.chap--flip .chap__pin { order: 2; }
+.chap__pin { position: relative; }
+.chap__card { position: sticky; top: 90px; display: block; height: min(78vh, 760px); border: 1px solid var(--pink); box-shadow: inset 0 0 0 7px var(--black), inset 0 0 0 8px rgba(244, 169, 207, .5), 0 0 70px rgba(255, 46, 154, .2); }
+.chap__pic { position: absolute; inset: 16px 16px 70px; overflow: hidden; }
+.chap__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 15%; }
+.chap__num { position: absolute; top: 24px; left: 0; right: 0; z-index: 2; text-align: center; color: var(--pink); }
+.chap__cardname { position: absolute; left: 0; right: 0; bottom: 14px; text-align: center; font-size: clamp(34px, 3vw, 52px); }
+.chap__body { padding-top: 40px; }
+.chap__k { color: var(--pink); }
+.chap__name { font-size: clamp(110px, 15vw, 280px); line-height: .8; margin-top: 10px; }
+.chap__quote { margin-top: 20px; font-family: var(--f-script); font-style: italic; font-variation-settings: 'SOFT' 100, 'opsz' 144; font-size: clamp(34px, 3.4vw, 60px); line-height: 1; color: #fff; }
+.chap__desc { margin-top: 26px; max-width: 46ch; font-size: 16px; color: var(--pink); }
+.chap__stats { margin-top: 30px; font-family: var(--f-mono); font-size: clamp(12px, 1vw, 15px); line-height: 1.6; color: var(--pink); white-space: pre; overflow: hidden; }
+.chap__stats b { color: var(--hot); font-weight: 400; }
+.chap__rules { margin-top: 44px; }
+.chap__rules .px { color: var(--pink); }
+.chap__rules ol { list-style: none; counter-reset: r; margin-top: 10px; }
+.chap__rules li { counter-increment: r; display: grid; grid-template-columns: 50px 1fr; gap: 10px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid rgba(244, 169, 207, .2);
+  font-family: var(--f-script); font-style: italic; font-variation-settings: 'SOFT' 100, 'opsz' 144; font-size: clamp(24px, 2.2vw, 36px); line-height: 1.1; color: var(--blush); }
+.chap__rules li::before { content: '0' counter(r); font-family: var(--f-px); font-style: normal; font-size: 11px; color: var(--hot); }
+.chap__two { display: flex; flex-wrap: wrap; gap: 40px; margin-top: 44px; align-items: flex-start; }
+.chap__mine pre { font-family: ui-monospace, Menlo, monospace; white-space: pre; font-size: 14px; line-height: 1.1; color: var(--pink); transition: color .25s, text-shadow .25s, transform .5s var(--ease); }
+.chap__mine:hover pre { color: #fff; text-shadow: 0 0 14px var(--hot); transform: translateY(-8px) rotate(-3deg); }
+.chap__mine .px { display: block; margin-top: 8px; color: var(--hot); }
+.chap__facts { display: grid; grid-template-columns: auto 1fr; gap: 8px 20px; color: var(--pink); }
+.chap__facts dt { color: rgba(244, 169, 207, .6); }
+.chap__facts dd { color: var(--hot); }
+.chap__btns { display: flex; flex-wrap: wrap; gap: 6px 24px; margin-top: 40px; }
+.chap__btns .btn.is-on { color: var(--hot); }
+
+/* ================= 05 the quiz ================= */
+.quiz { min-height: 100vh; }
+.quiz__box { position: relative; z-index: 2; max-width: 1100px; margin: 60px auto 0; padding: 0 var(--gut); }
+.quiz__bar { color: var(--pink); white-space: pre; font-family: var(--f-mono); font-size: 13px; }
+.quiz__q { margin-top: 24px; font-family: var(--f-script); font-style: italic; font-variation-settings: 'SOFT' 100, 'opsz' 144; font-size: clamp(44px, 5.4vw, 96px); line-height: .95; color: #fff; min-height: 2em; }
+.quiz__a { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; margin-top: 40px; border-top: 1px solid rgba(244, 169, 207, .3); border-left: 1px solid rgba(244, 169, 207, .3); }
+.quiz__opt { position: relative; isolation: isolate; text-align: left; padding: 26px 24px; border-right: 1px solid rgba(244, 169, 207, .3); border-bottom: 1px solid rgba(244, 169, 207, .3);
+  font-family: var(--f-mono); font-size: clamp(16px, 1.5vw, 22px); color: var(--pink); transition: color .3s; }
+.quiz__opt::before { content: ''; position: absolute; inset: 0; z-index: -1; background: var(--hot); transform: scaleY(0); transform-origin: bottom; transition: transform .45s var(--ease); }
+.quiz__opt:hover, .quiz__opt.is-on { color: var(--black); }
+.quiz__opt:hover::before, .quiz__opt.is-on::before { transform: none; }
+.quiz__res:not([hidden]) { display: grid; grid-template-columns: minmax(200px, 340px) 1fr; gap: clamp(24px, 4vw, 60px); align-items: end; margin-top: 30px; }
+.quiz__pic { position: relative; display: block; aspect-ratio: 3 / 4; border: 1px solid var(--hot); box-shadow: 0 0 60px rgba(255, 46, 154, .3); overflow: hidden; }
+.quiz__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 15%; }
+.quiz__res .px { color: var(--pink); }
+.quiz__name { font-size: clamp(100px, 13vw, 230px); line-height: .8; }
+.quiz__why { margin: 20px 0; max-width: 46ch; font-size: 15px; color: var(--pink); }
+
+/* ================= responsive ================= */
+@media (max-width: 900px) {
+  .lineup__row { display: grid; grid-template-columns: 1fr 1fr; min-height: 0; }
+  .lu__frame { aspect-ratio: 3 / 4; flex: none; }
+  .chap, .chap--flip { grid-template-columns: 1fr; padding-top: 80px; }
+  .chap--flip .chap__pin { order: 0; }
+  .chap__card { position: relative; top: 0; height: 70vh; }
+  .quiz__a { grid-template-columns: 1fr; }
+  .quiz__res:not([hidden]) { grid-template-columns: 1fr; }
+}

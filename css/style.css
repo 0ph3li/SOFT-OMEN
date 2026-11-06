@@ -1,0 +1,155 @@
+/* =========================================================
+   SOFT OMEN — style.css (shared, every page)
+   a tarot house in milano. bad news, delivered softly.
+   black velvet, poster pink, one hot pink that shouts
+   concept, design & code by ghostly.grl ♥
+   ========================================================= */
+
+:root {
+  --ink: #0b0709;      /* the velvet */
+  --ink-2: #19121a;
+  --pink: #f4a9cf;     /* rock-alarm poster pink, the soft one */
+  --blush: #fbe3ef;
+  --hot: #ff2e9a;      /* misery pink, the loud one */
+  --bone: #f3eef0;     /* card stock */
+  --grey: #bdb6ba;
+  --lav: #dde0f6;      /* the slim tag */
+
+  --f-script: 'Fraunces', Georgia, serif;                      /* the big pink lines: italic, SOFT axis at 100 */
+  --f-px: 'Silkscreen', 'Courier New', monospace;               /* tiny labels */
+  --f-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;    /* everything else */
+  --black: #050304;                                              /* the footer black, everywhere now */
+
+  --gut: clamp(16px, 3vw, 44px);
+  --ease: cubic-bezier(.2, .8, .2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; overflow-x: clip; background: var(--black); }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+body {
+  background: var(--black); color: var(--pink);
+  font-family: var(--f-mono); font-size: 14px; line-height: 1.6;
+  -webkit-font-smoothing: antialiased; overflow-x: clip;
+}
+body.is-loading { overflow: hidden; }
+img, svg, canvas { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button, input, textarea { font: inherit; color: inherit; background: none; border: 0; outline: 0; }
+button { cursor: pointer; }
+::selection { background: var(--hot); color: var(--ink); }
+
+.px { font-family: var(--f-px); font-size: 11px; letter-spacing: .04em; text-transform: lowercase; }
+.script { font-family: var(--f-script); font-style: italic; letter-spacing: -.025em; font-weight: 400; font-variation-settings: 'SOFT' 100, 'opsz' 144; font-weight: 400; line-height: .9; color: var(--hot); text-shadow: 0 0 40px rgba(255, 46, 154, .35); }
+.c { display: inline-block; will-change: transform, filter; }
+
+/* ---------- custom cursor: a four-point star ---------- */
+html.has-cursor, html.has-cursor * { cursor: none !important; }
+.cur { position: fixed; left: 0; top: 0; z-index: 400; pointer-events: none; display: none; }
+html.has-cursor .cur { display: block; }
+.cur__star { width: 26px; height: 26px; max-width: none; margin: -13px 0 0 -13px; fill: var(--pink); stroke: var(--ink); stroke-width: 1.6;
+  filter: drop-shadow(0 0 6px rgba(255, 46, 154, .55)); transition: transform .45s var(--ease), fill .3s; }
+.cur.is-hover .cur__star { transform: scale(1.7) rotate(45deg); fill: var(--hot); }
+.cur.is-down .cur__star { transform: scale(.7) rotate(90deg); }
+.cur__label { position: absolute; left: 18px; top: 10px; white-space: nowrap; background: var(--hot); color: var(--ink); padding: 2px 6px 3px;
+  opacity: 0; transform: translateY(4px); transition: opacity .25s, transform .25s var(--ease); }
+.cur.has-label .cur__label { opacity: 1; transform: none; }
+
+.trail { position: fixed; z-index: 390; pointer-events: none; font-family: ui-monospace, Menlo, monospace; font-size: 14px; color: var(--hot); text-shadow: 0 0 8px var(--hot);
+  transform: translate(-50%, -50%); animation: trail .9s var(--ease) forwards; }
+@keyframes trail { to { opacity: 0; transform: translate(calc(-50% + var(--dx)), 30px) scale(.4); } }
+
+/* ---------- header ---------- */
+.hdr { position: fixed; top: 0; left: 0; right: 0; z-index: 60; display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  padding: 14px var(--gut); color: var(--pink); transition: transform .5s var(--ease), background .4s; }
+.hdr.is-hidden { transform: translateY(-110%); }
+.hdr.is-solid { background: rgba(5, 3, 4, .85); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+.hdr__logo { line-height: 1; }
+.hdr__nav { display: flex; gap: clamp(12px, 2.4vw, 32px); }
+.hdr__nav a { position: relative; padding: 2px 0; }
+.hdr__nav a::before { content: '✦'; position: absolute; left: -12px; opacity: 0; transform: scale(0) rotate(-90deg); transition: .35s var(--ease); color: var(--hot); }
+.hdr__nav a:hover::before { opacity: 1; transform: none; }
+.hdr__moon { min-width: 110px; text-align: right; }
+
+/* ---------- image slots: the photo is drawn as ascii on a canvas; the tag shows until it exists ---------- */
+.slot-tag { position: absolute; z-index: 3; font-size: 9px; color: rgba(244, 169, 207, .45); pointer-events: none; }
+.has-img > .slot-tag, .has-img .slot-tag { display: none; }
+
+/* ---------- toast ---------- */
+.toast { position: fixed; left: 50%; bottom: 22px; z-index: 300; transform: translate(-50%, 140%); background: var(--black); color: var(--pink);
+  border: 1px solid var(--pink); box-shadow: 0 0 30px rgba(255, 46, 154, .35); padding: 10px 16px; font-size: 12px; max-width: min(90vw, 460px); text-align: center;
+  transition: transform .55s var(--ease), visibility 0s .55s; pointer-events: none; visibility: hidden; }
+.toast.is-on { transform: translate(-50%, 0); visibility: visible; transition: transform .55s var(--ease); }
+
+/* ---------- footer sign ---------- */
+.ft-sign .sig { font-family: var(--f-script); font-style: italic; letter-spacing: -.025em; font-weight: 400; font-variation-settings: 'SOFT' 100, 'opsz' 144; font-size: 1.9em; text-transform: none; letter-spacing: 0; color: var(--pink); vertical-align: -.2em; }
+
+/* ---------- shared section bits ---------- */
+section { position: relative; overflow: hidden; }
+.sec__ascii { position: absolute; inset: 0; width: 100%; height: 100%; }
+.sec__head { position: relative; z-index: 2; padding: 0 var(--gut); }
+.sec__head .px { color: var(--pink); }
+.sec__head .px b { color: var(--hot); font-weight: 400; }
+.sec__head .script { margin-top: 10px; font-size: clamp(70px, 10vw, 170px); }
+.btn { position: relative; z-index: 3; color: var(--pink); padding: 8px 4px; transition: color .25s, text-shadow .25s; }
+.btn:hover { color: var(--hot); text-shadow: 0 0 14px rgba(255, 46, 154, .8); }
+.btn--big { font-size: 15px; margin-top: 34px; }
+
+/* ================= riffle: rows of card backs shuffling past ================= */
+.riffle { overflow: hidden; padding: 30px 0; display: grid; gap: 14px; background: var(--black); }
+.riffle__row { display: flex; gap: 14px; width: max-content; will-change: transform; }
+.riffle__row pre { font-family: ui-monospace, Menlo, monospace; font-size: clamp(8px, .75vw, 11px); line-height: 1.1; color: var(--pink); white-space: pre; opacity: .8; transition: color .2s, opacity .2s; }
+.riffle__row pre:hover { color: var(--hot); opacity: 1; text-shadow: 0 0 12px var(--hot); }
+
+/* ================= footer: ascii roses (unchanged from v1) ================= */
+.ft { position: relative; background: #050304; color: var(--pink); padding: 140px var(--gut) 26px; overflow: hidden; min-height: 100vh; display: flex; flex-direction: column; }
+.ft__ascii { position: absolute; inset: 0; width: 100%; height: 100%; }
+.ft::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 50%; z-index: 1; pointer-events: none; background: linear-gradient(transparent, rgba(5, 3, 4, .92) 55%); }
+.ft__script { position: relative; z-index: 2; font-family: var(--f-script); font-style: italic; letter-spacing: -.025em; font-weight: 400; font-variation-settings: 'SOFT' 100, 'opsz' 144; font-size: clamp(80px, 12vw, 210px); line-height: .9; color: var(--hot); text-shadow: 0 0 40px rgba(255, 46, 154, .35); }
+.ft__cols { position: relative; z-index: 2; display: flex; gap: clamp(30px, 8vw, 140px); margin-top: auto; padding-top: 70px; color: var(--pink); line-height: 1.7; }
+.ft__cols a { color: var(--hot); }
+.ft__sig { position: relative; z-index: 2; margin-top: 50px; font-family: ui-monospace, 'Menlo', monospace; font-size: clamp(4px, .72vw, 10px); line-height: 1.05; color: var(--pink); white-space: pre; overflow: hidden;
+  text-shadow: 0 0 8px rgba(255, 46, 154, .6); }
+.ft__bottom { position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-top: 22px; padding-top: 14px; border-top: 1px solid rgba(244, 169, 207, .3); color: rgba(244, 169, 207, .8); flex-wrap: wrap; }
+
+@media (max-width: 640px) { .ft__cols { flex-direction: column; gap: 20px; } }
+
+@media (max-width: 760px) {
+  .hdr__nav { display: none; }
+  .hdr__moon { min-width: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}
+
+/* her photos: plain images */
+.photo { display: block; max-width: none; pointer-events: none; opacity: 0; filter: blur(18px); transform: scale(1.04); transition: opacity 1.4s ease, filter 1.4s ease, transform 1.8s cubic-bezier(.2,.8,.2,1); }
+.photo.is-in { opacity: 1; filter: none; transform: none; }
+@media (prefers-reduced-motion: reduce) { .photo { transition: none; } }
+
+/* ---------- the page you're on ---------- */
+.hdr__nav a.is-on { color: var(--hot); }
+.hdr__nav a.is-on::before { opacity: 1; transform: none; }
+
+/* ---------- loader for the inner pages: a small card is cut and turns into the page ---------- */
+.pl { position: fixed; inset: 0; z-index: 250; background: var(--black); display: grid; place-items: center; align-content: center; gap: 24px; }
+.pl__card { font-family: ui-monospace, Menlo, monospace; white-space: pre; font-size: clamp(13px, 1.5vw, 20px); line-height: 1.12; color: var(--pink); text-shadow: 0 0 10px rgba(255, 46, 154, .55); }
+.pl__cap { color: var(--pink); text-align: center; }
+.pl__cap b { color: var(--hot); font-weight: 400; }
+
+/* ---------- image slot: dashed until her photo is in ---------- */
+.slot { position: relative; overflow: hidden; background: repeating-linear-gradient(135deg, rgba(244, 169, 207, .06) 0 10px, transparent 10px 20px); border: 1px dashed rgba(244, 169, 207, .35); }
+.slot > img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; }
+.slot.has-img { border-color: transparent; background: none; }
+.slot > .slot-tag { left: 12px; bottom: 10px; }
+
+/* ---------- inner page heads: one giant fraunces line ---------- */
+.ph { position: relative; padding: 120px var(--gut) 60px; min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; overflow: hidden; }
+.ph > .px { position: relative; z-index: 2; color: var(--pink); }
+.ph > .px b { color: var(--hot); font-weight: 400; }
+.ph__title { position: relative; z-index: 2; margin-top: 8px; font-size: clamp(100px, 16vw, 290px); line-height: .8; }
+.ph__lede { position: relative; z-index: 2; margin-top: 26px; max-width: 46ch; font-size: 15px; color: var(--pink); }
+.sec { position: relative; padding: 140px 0 120px; background: var(--black); }
+
+[hidden] { display: none !important; }

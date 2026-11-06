@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" translate="no" class="notranslate">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="google" content="notranslate" />
+  <title>readers — SOFT OMEN</title>
+  <meta name="description" content="Four readers. Pick one, she stays with you. Nox, Lace, Dread and Blush." />
+  <meta name="theme-color" content="#050304" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <!-- concept, design & code by ghostly.grl ♥ -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=9" />
+  <link rel="stylesheet" href="css/readers.css?v=1" />
+</head>
+<body class="is-loading" data-page="readers">
+
+  <!-- ============ loader: a small card is cut and turns into the page ============ -->
+  <div class="pl" aria-hidden="true">
+    <pre class="pl__card"></pre>
+    <p class="pl__cap px">readers <b class="pl__n">000</b>%</p>
+  </div>
+
+  <!-- ============ cursor ============ -->
+  <div class="cur" aria-hidden="true">
+    <svg class="cur__star" viewBox="0 0 40 40"><path d="M20 0 C21.5 13 27 18.5 40 20 C27 21.5 21.5 27 20 40 C18.5 27 13 21.5 0 20 C13 18.5 18.5 13 20 0Z" /></svg>
+    <span class="cur__label px"></span>
+  </div>
+
+  <!-- ============ header ============ -->
+  <header class="hdr px">
+    <a href="index.html" class="hdr__logo" data-cursor="home">soft omen ✦</a>
+    <nav class="hdr__nav">
+      <a href="pull.html" data-scramble>the pull</a>
+      <a href="readers.html" class="is-on" data-scramble>readers</a>
+      <a href="deck.html" data-scramble>the deck</a>
+      <a href="readings.html" data-scramble>readings</a>
+      <a href="book.html" data-scramble>book</a>
+    </nav>
+    <p class="hdr__moon" data-moon>moon ☾ --%</p>
+  </header>
+
+  <main>
+
+    <!-- ============ 00 the line-up: four photo cards, hover opens one ============ -->
+    <section class="ph lineup" id="top">
+      <p class="px">four readers ✦ pick one, <b>she stays with you</b></p>
+      <h1 class="ph__title script lineup__title">who reads you</h1>
+      <div class="lineup__row" data-lineup></div>
+    </section>
+
+    <!-- ============ 01-04 one chapter each ============ -->
+    <div class="chapters" data-chapters></div>
+
+    <div class="riffle" aria-hidden="true"><div class="riffle__row"></div><div class="riffle__row"></div></div>
+
+    <!-- ============ 05 the quiz ============ -->
+    <section class="sec quiz" id="quiz">
+      <canvas class="sec__ascii" aria-hidden="true"></canvas>
+      <div class="sec__head">
+        <p class="px">05 ✦ can't choose? ✦ <b>four questions</b></p>
+        <h2 class="script">who should<br />read you</h2>
+      </div>
+      <div class="quiz__box">
+        <pre class="quiz__bar px" data-qbar></pre>
+        <p class="quiz__q" data-qq></p>
+        <div class="quiz__a" data-qa></div>
+        <div class="quiz__res" data-qres hidden></div>
+      </div>
+    </section>
+
+    <!-- ============ footer: ascii roses ============ -->
+    <footer class="ft" id="ft">
+      <canvas class="ft__ascii" aria-hidden="true"></canvas>
+      <p class="ft__script">see you in<br />your dreams</p>
+      <div class="ft__cols px">
+        <p>soft omen<br />via dei cappellari 7<br />milano</p>
+        <p>every night<br />23:00 — 03:33<br />closed on full moons*</p>
+        <p>*we're busy<br /><a href="book.html" data-cursor="book">book a night →</a><br /><a href="#top" data-cursor="up">back to the top ↑</a></p>
+      </div>
+      <pre class="ft__sig" aria-label="ghostly.grl">                ░▓▓▓░                                          ░░    ░▓▓▓▓                                               ░▓▓▓▓
+                █████                                       ▓███▓    ▓████                                               ▓████
+   ░▓▓▓░ ▓▓▓▓░  █████░▓▓▓▓░       ░▓▓▓▓▓░       ░▓▓▓▓▓▓░  ░▓█████▓▓  ▓████ ▓▓▓▓▓    ▓▓▓▓░         ░▓▓▓░ ▓▓▓▓░  ░▓▓▓░░▓▓▓ ▓████
+ ░███████████▓  ████████████    ▓█████████▓   ▓███▓▓▓███▓ ▓████████  ▓████ ░████░  ░████        ░███████████▓  ████████▓ ▓████
+ ████▓░░▓████▓  █████░ ░████░  █████░ ░████▓  ████▓▓▓▓░░    ████▓    ▓████  ▓████  ████░        ████▓░░▓████▓  ▓████▓ ░  ▓████
+░████░   ████▓  █████   ████▓ ░████░   ▓████  ░▓█████████░  ████▓    ▓████   ▓███▓▓███▓        ░████░   ████▓  ▓████     ▓████
+ ████▓░░▓████▓  █████   ████▓  ████▓░ ░████▓     ░░░▓████▓  █████ ░  ▓████    ████████   ▓████  ████▓░░▓████▓  ▓████     ▓████
+ ░███████████▓  █████   ████▓   ▓█████████▓   █████▓▓████░  ▓██████  ▓████     ██████    █████  ░███████████▓  █████     ▓████
+   ░▓▓▓▓▓████░  ░▓▓▓░   ▓▓▓▓░     ░▓▓▓▓▓░      ░▓▓▓▓▓▓░░     ░▓▓▓▓▓  ░▓▓▓▓     ▓████░    ░▓▓▓▓    ░▓▓▓▓▓████░  ░▓▓▓▓     ░▓▓▓▓
+ ▓██████████▓                                                              ░███████▓            ▓██████████▓
+  ░▓▓▓▓▓▓▓░                                                                 ▓▓▓▓▓░               ░▓▓▓▓▓▓▓░</pre>
+      <div class="ft__bottom px">
+        <span>© 2026 SOFT OMEN — a concept. no futures were harmed.</span>
+        <span data-clock>milano 00:00</span>
+        <span class="ft-sign">concept, design &amp; code by <span class="sig">ghostly.grl</span> ♥</span>
+      </div>
+    </footer>
+  </main>
+
+  <div class="toast px" aria-live="polite"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/main.js?v=16"></script>
+  <script src="js/readers.js?v=1"></script>
+</body>
+<!--
+   *    /\_/\      ✦
+       ( o.o )   <3  ghostly.grl
+   ✦    > ^ <   ☾     *
+       bad news, delivered softly.
+-->
+</html>

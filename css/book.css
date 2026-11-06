@@ -1,0 +1,83 @@
+/* =========================================================
+   SOFT OMEN — book.css (book)
+   sleep on it → the moon calendar → the ticket → house rules
+   concept, design & code by ghostly.grl ♥
+   ========================================================= */
+
+/* ================= 00 sleep on it ================= */
+.bk-hero .ph__title > span { display: block; }
+.bk-hero .ph__title > span + span { margin-left: .6em; }
+.bk-hero__row { position: static; display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-top: auto; padding-top: 40px; }
+.bk-count { position: relative; z-index: 2; }
+.bk-count .px { color: var(--pink); }
+.bk-count__n { font-family: var(--f-px); font-size: clamp(56px, 8vw, 140px); line-height: 1; color: var(--hot); text-shadow: 0 0 30px rgba(255, 46, 154, .6); white-space: pre; font-variant-numeric: tabular-nums; }
+.bk-hero__slot { position: absolute; z-index: 2; right: var(--gut); top: 110px; width: clamp(200px, 22vw, 340px); aspect-ratio: 3 / 4; rotate: -3deg; }
+
+/* ================= 01 the moon calendar ================= */
+.cal { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(7, 1fr); margin: 60px var(--gut) 0; border-top: 1px solid rgba(244, 169, 207, .3); border-left: 1px solid rgba(244, 169, 207, .3); }
+.night { position: relative; isolation: isolate; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; padding: 14px 14px 16px; border-right: 1px solid rgba(244, 169, 207, .3); border-bottom: 1px solid rgba(244, 169, 207, .3); color: var(--pink); text-align: left; transition: color .3s; }
+.night::before { content: ''; position: absolute; inset: 0; z-index: -1; background: var(--hot); transform: scaleY(0); transform-origin: bottom; transition: transform .45s var(--ease); }
+.night:hover::before { transform: scaleY(.06); }
+.night.is-on::before { transform: none; }
+.night.is-on { color: var(--black); }
+.night__d { opacity: .8; }
+.night__n { font-family: var(--f-script); font-style: italic; font-variation-settings: 'SOFT' 100, 'opsz' 144; font-size: clamp(34px, 3.4vw, 60px); line-height: .9; }
+.night__m { font-family: ui-monospace, Menlo, monospace; white-space: pre; font-size: clamp(8px, .8vw, 12px); line-height: 1; color: var(--hot); align-self: flex-end; margin-top: -30px; }
+.night.is-on .night__m { color: var(--black); }
+.night__p { font-size: 9px; opacity: .8; }
+.night.is-full { cursor: not-allowed; }
+.night.is-full .night__n { text-decoration: line-through; text-decoration-color: var(--hot); text-decoration-thickness: 3px; opacity: .5; }
+.night.is-full .night__m { color: #fff; text-shadow: 0 0 10px var(--hot); }
+.night.is-full .night__p { color: var(--hot); opacity: 1; }
+
+/* ================= 02 the form + ticket ================= */
+.bk__grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr auto; gap: clamp(30px, 6vw, 100px); align-items: start; max-width: 1360px; margin: 60px auto 0; padding: 0 var(--gut); }
+.bk__f { border: 0; padding: 20px 0; border-bottom: 1px solid rgba(244, 169, 207, .2); }
+.bk__f legend, .bk__f label.px { display: block; color: var(--pink); margin-bottom: 14px; padding-top: 20px; float: left; width: 100%; }
+.bk__f label.px b { color: var(--hot); font-weight: 400; }
+.chips, .whos { clear: both; display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { display: flex; flex-direction: column; align-items: flex-start; padding: 10px 14px; border: 1px solid rgba(244, 169, 207, .35); color: var(--pink); text-align: left; transition: border-color .2s, color .2s, background .2s; }
+.chip span { font-family: var(--f-script); font-style: italic; font-variation-settings: 'SOFT' 100, 'opsz' 144; font-size: 24px; line-height: 1; }
+.chip small { font-family: var(--f-px); font-size: 9px; opacity: .8; margin-top: 4px; }
+.chip:hover { border-color: var(--hot); color: var(--hot); }
+.chip.is-on { background: var(--hot); border-color: var(--hot); color: var(--black); }
+.who { display: flex; flex-direction: column; align-items: center; gap: 6px; width: 110px; color: var(--pink); }
+.who__pic { position: relative; display: block; width: 110px; aspect-ratio: 3 / 4; border: 1px solid rgba(244, 169, 207, .35); overflow: hidden; transition: border-color .25s, box-shadow .25s; }
+.who__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 15%; filter: grayscale(1) brightness(.7); transition: filter .4s; }
+.who:hover .who__img, .who.is-on .who__img { filter: none; }
+.who.is-on .who__pic { border-color: var(--hot); box-shadow: 0 0 30px rgba(255, 46, 154, .5); }
+.who__n { font-family: var(--f-script); font-style: italic; font-variation-settings: 'SOFT' 100, 'opsz' 144; font-size: 24px; }
+.who.is-on .who__n { color: var(--hot); }
+.truth { --v: 0; clear: both; display: block; width: 100%; -webkit-appearance: none; appearance: none; height: 2px; background: linear-gradient(90deg, var(--hot) calc(var(--v) * 100%), rgba(244, 169, 207, .3) 0); margin: 18px 0 10px; }
+.truth::-webkit-slider-thumb { -webkit-appearance: none; width: 30px; height: 30px; background: var(--hot); clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%); cursor: grab; }
+.truth::-moz-range-thumb { width: 30px; height: 30px; border: 0; background: var(--hot); clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%); }
+.truth__ticks { display: flex; justify-content: space-between; color: rgba(244, 169, 207, .7); }
+.bk__note { margin-top: 10px; color: var(--blush); }
+.bk__in { clear: both; display: block; width: 100%; font-family: var(--f-mono); font-size: clamp(18px, 1.8vw, 26px); color: var(--hot); caret-color: var(--hot); }
+.bk__in::placeholder { color: rgba(244, 169, 207, .35); }
+.bk__ticket { position: sticky; top: 100px; }
+.ticket { font-family: ui-monospace, Menlo, monospace; font-size: clamp(11px, 1.05vw, 15px); line-height: 1.25; color: var(--pink); white-space: pre; text-shadow: 0 0 10px rgba(255, 46, 154, .5); transition: color .3s; }
+.ticket.is-booked { color: var(--hot); text-shadow: 0 0 18px rgba(255, 46, 154, .9); }
+.bk__ics { display: inline-block; margin-top: 16px; }
+.bk__ics[hidden] { display: none; }
+
+/* ================= 03 house rules ================= */
+.rules__list { list-style: none; max-width: 1300px; margin: 60px auto 0; padding: 0 var(--gut); }
+.rule { display: grid; grid-template-columns: 60px 1fr; gap: 14px; align-items: baseline; padding: 26px 0; border-top: 1px solid rgba(244, 169, 207, .25); }
+.rule:last-child { border-bottom: 1px solid rgba(244, 169, 207, .25); }
+.rule .px { color: var(--hot); }
+.rule__t { display: flex; flex-direction: column; gap: 4px; }
+.rule__t s { --s: 1; position: relative; text-decoration: none; font-family: var(--f-mono); font-size: clamp(15px, 1.4vw, 20px); color: rgba(244, 169, 207, .55); width: fit-content; }
+.rule__t s::after { content: ''; position: absolute; left: 0; top: 52%; height: 2px; width: calc(var(--s) * 100%); background: var(--hot); }
+.rule__t b { font-family: var(--f-script); font-style: italic; font-weight: 400; font-variation-settings: 'SOFT' 100, 'opsz' 144; font-size: clamp(34px, 4.4vw, 76px); line-height: 1; color: var(--hot); text-shadow: 0 0 30px rgba(255, 46, 154, .3); }
+
+/* ================= responsive ================= */
+@media (max-width: 900px) {
+  .bk-hero__row { flex-direction: column; align-items: flex-start; }
+  .bk-hero__slot { position: relative; right: auto; top: auto; width: 70%; }
+  .cal { grid-template-columns: repeat(4, 1fr); }
+  .night__m { display: none; }
+  .bk__grid { grid-template-columns: 1fr; }
+  .bk__ticket { position: relative; top: 0; }
+  .ticket { font-size: 10px; }
+}
